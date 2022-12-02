@@ -5,22 +5,8 @@ const input = fs
   .toString();
 
 const arr = input.split('\n');
-let max = 0;
-let sum = 0;
-
-for (const val of arr) {
-  if (val !== '') {
-    sum += Number(val);
-  } else {
-    if (sum > max) max = sum;
-    sum = 0;
-  }
-}
-
-console.log(max);
-
 let caloriesPerElve = [];
-sum = 0;
+let sum = 0;
 
 for (const val of arr) {
   if (val !== '') {
@@ -32,4 +18,5 @@ for (const val of arr) {
 }
 
 caloriesPerElve.sort();
+console.log(caloriesPerElve.at(-1));
 console.log(caloriesPerElve.slice(-3).reduce((a, b) => a + b));
